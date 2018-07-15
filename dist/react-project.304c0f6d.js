@@ -103,9 +103,46 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({4:[function(require,module,exports) {
-console.log("Hello, World!");
-},{}],6:[function(require,module,exports) {
+})({10:[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var add = function add(a, b) {
+  return a + b;
+};
+
+var subtract = function subtract(a, b) {
+  return a - b;
+};
+
+var divide = function divide(a, b) {
+  return a / b;
+};
+
+var multiply = function multiply(a, b) {
+  return a * b;
+};
+
+exports.add = add;
+exports.subtract = subtract;
+exports.divide = divide;
+exports.multiply = multiply;
+},{}],4:[function(require,module,exports) {
+'use strict';
+
+var _mathModule = require('./src/mathModule');
+
+var MathModule = _interopRequireWildcard(_mathModule);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+console.log(MathModule.add(9, 3));
+console.log(MathModule.subtract(9, 3));
+console.log(MathModule.divide(9, 3));
+console.log(MathModule.multiply(9, 3));
+},{"./src/mathModule":10}],6:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
