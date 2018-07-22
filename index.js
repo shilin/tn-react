@@ -1,15 +1,11 @@
-import * as MathModule from './src/mathModule';
-console.log( MathModule.add(9, 3) );
-console.log( MathModule.subtract(9, 3) );
-console.log( MathModule.divide(9, 3) );
-console.log( MathModule.multiply(9, 3) );
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Hello from './src/Hello';
+import PRODUCTS from './src/constants/Products';
+import ProductCard from './src/ProductCard';
+import Catalog from './src/Catalog';
 
 ReactDOM.render(
-  <Hello />,
+  <Catalog productList={PRODUCTS} />,
   document.getElementById('root')
 );
