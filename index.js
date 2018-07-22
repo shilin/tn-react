@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import PRODUCTS from './src/constants/Products';
-import ProductCard from './src/ProductCard';
-import Catalog from './src/Catalog';
+import CatalogPage from './src/CatalogPage';
 
 ReactDOM.render(
-  <Catalog productList={PRODUCTS} />,
+  <CatalogPage productList={PRODUCTS} />,
   document.getElementById('root')
 );
