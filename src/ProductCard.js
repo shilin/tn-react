@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 import Image from './Image';
@@ -12,10 +12,10 @@ class ProductCard extends Component {
     return (
     <div>
       <Image
-        src = {product.imageUrl}
-        width = "256px"
-        height = "256px"
-        alt = "clothes"
+        src={product.imageUrl}
+        width="256px"
+        height="256px"
+        alt="clothes"
       />
       <TextBox >
         {product.title}

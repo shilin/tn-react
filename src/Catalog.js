@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ProductCard from './ProductCard';
 
 class Catalog extends Component {
@@ -7,7 +7,7 @@ class Catalog extends Component {
 
     return (
         <ul>
-          { list.map( (product, index) =>  <ProductCard key={index} product={product} />) }
+          {list.map( (product, index) =>  <ProductCard key={index} product={product} />)}
         </ul>
     )
   }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Catalog from './Catalog';
 
 class CatalogPage extends Component {
