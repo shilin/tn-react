@@ -7,7 +7,7 @@ import Price from './Price';
 
 class ProductCard extends Component {
   render() {
-    const  product = this.props.product;
+    const  {product, addToCart} = this.props;
 
     return (
     <div>
@@ -20,6 +20,9 @@ class ProductCard extends Component {
       <TextBox >
         {product.title}
       </TextBox>
+      <button onClick={(e) => addToCart(product)}>
+        Добавить в корзину
+      </button>
     </div>
     )
   }
