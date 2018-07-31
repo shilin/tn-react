@@ -20,7 +20,7 @@ class ProductCard extends Component {
       <TextBox >
         {product.title}
       </TextBox>
-      <button onClick={(e) => addToCart(product)}>
+      <button onClick={(e) => addToCart(product.id)}>
         Добавить в корзину
       </button>
     </div>

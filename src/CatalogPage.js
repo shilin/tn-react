@@ -8,23 +8,41 @@ class CatalogPage extends Component {
     super(props);
     this.state = {
       productList: props.productList,
-      cartProductList: [],
+      cartProducts: new Map(),
     };
 
     this.addToCart = this.addToCart.bind(this);
-  };
+    this.totalCount = this.totalCount.bind(this);
+  }
 
-  addToCart(product) {
-    this.setState({
-       cartProductList: this.state.cartProductList.concat(product),
-    });
-  };
+  addToCart(id) {
+    let count;
+    console.log(id);
+    let cartProducts = this.state.cartProducts;
+    let mapCopy = new Map(cartProducts);
+    console.log('-- mapCopy before');
+    console.log(mapCopy);
+    console.log('-- mapCopy before');
+    
+    mapCopy.set(id, (mapCopy.get(id) || 0) + 1);
+
+    console.log('-- mapCopy after');
+    console.log(mapCopy);
+    console.log('-- mapCopy after');
+
+    this.setState({ cartProducts: mapCopy })
+
+  }
+
+  totalCount(cartProducts) {
+    return ([...cartProducts.values()] || [0]).reduce((pr, cur) => pr + cur, 0);
+  }
 
   render() {
     return (
       <Fragment>
-        <CartContext.Provider value={this.state.cartProductList} >
-          <Cart />
+        <CartContext.Provider value={this.state.cartProducts} >
+          <Cart totalCount={this.totalCount} />
         </CartContext.Provider >
         <Catalog addToCart={this.addToCart} productList={this.state.productList} />
       </Fragment>

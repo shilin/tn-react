@@ -3,13 +3,12 @@ import CartContext from './CartContext';
 
 class Cart extends Component {
   render() {
-    const count = this.props.cartCount;
+    const totalCount = this.props.totalCount;
 
     return (
       <Fragment>
-      {count}
       <CartContext.Consumer>
-        {context => context.length}
+        {cartProducts => totalCount(cartProducts)}
       </CartContext.Consumer>
       <button>Корзина</button>
       </Fragment>
