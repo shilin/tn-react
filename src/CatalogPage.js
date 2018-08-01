@@ -15,24 +15,14 @@ class CatalogPage extends Component {
     this.totalCount = this.totalCount.bind(this);
   }
 
-  addToCart(id) {
-    let count;
-    console.log(id);
-    let cartProducts = this.state.cartProducts;
-    let mapCopy = new Map(cartProducts);
-    console.log('-- mapCopy before');
-    console.log(mapCopy);
-    console.log('-- mapCopy before');
-    
-    mapCopy.set(id, (mapCopy.get(id) || 0) + 1);
-
-    console.log('-- mapCopy after');
-    console.log(mapCopy);
-    console.log('-- mapCopy after');
-
-    this.setState({ cartProducts: mapCopy })
-
+  addToCart(id, quantity) {
+    console.log(id, quantity);
+    const newCartProducts = new Map(this.state.cartProducts);
+    newCartProducts.set(id, (newCartProducts.get(id) || 0) + +quantity);
+    this.setState({ cartProducts: newCartProducts });
   }
+
+  
 
   totalCount(cartProducts) {
     return ([...cartProducts.values()] || [0]).reduce((pr, cur) => pr + cur, 0);
