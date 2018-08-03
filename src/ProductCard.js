@@ -24,9 +24,7 @@ class ProductCard extends Component {
           {product.title}
         </TextBox>
 
-        <CartUpdater addToCart={addToCart} product={product}>
-        </CartUpdater>
-
+        <CartUpdater addToCart={addToCart} product={product} />
       </div>
     )
   }

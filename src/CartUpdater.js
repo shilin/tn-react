@@ -5,7 +5,7 @@ class CartUpdater extends Component {
     super(props);
 
     this.state = {
-      quantity: ''
+      quantity: 1
     };
   }
 
