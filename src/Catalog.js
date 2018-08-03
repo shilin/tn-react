@@ -3,11 +3,13 @@ import ProductCard from './ProductCard';
 
 class Catalog extends Component {
   render() {
-    const list = this.props.productList;
+    const {productList: list, addToCart} = this.props;
 
     return (
         <ul>
-          {list.map( (product, index) =>  <ProductCard key={index} product={product} />)}
+          {list.map(
+             (product) =>  <ProductCard key={product.id} addToCart={this.props.addToCart} product={product} />
+             )}
         </ul>
     )
   }

@@ -1,26 +1,31 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 
 import Image from './Image';
 import TextBox from './TextBox';
-import Price from './Price';
+import CartUpdater from './CartUpdater';
 
 class ProductCard extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    const  product = this.props.product;
+    const { product, addToCart } = this.props;
 
     return (
-    <div>
-      <Image
-        src={product.imageUrl}
-        width="256px"
-        height="256px"
-        alt="clothes"
-      />
-      <TextBox >
-        {product.title}
-      </TextBox>
-    </div>
+      <div>
+        <Image
+          src={product.imageUrl}
+          width="256px"
+          height="256px"
+          alt="clothes"
+        />
+        <TextBox >
+          {product.title}
+        </TextBox>
+
+        <CartUpdater addToCart={addToCart} product={product} />
+      </div>
     )
   }
 }
